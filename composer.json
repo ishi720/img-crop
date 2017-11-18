@@ -1,0 +1,12 @@
+{
+    "name": "ishiduka/img-crop",
+    "authors": [
+        {
+            "name": "ishi720",
+            "email": "ishizuka720@gmail.com"
+        }
+    ],
+    "require": {
+        "imagine/imagine": "^0.7.1"
+    }
+}
