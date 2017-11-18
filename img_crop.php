@@ -5,6 +5,8 @@ $imagine = new Imagine\Gd\Imagine();
 
 $filename = htmlspecialchars($_GET["img_url"],ENT_QUOTES, "UTF-8");
 
+$img_info = pathinfo($filename);
+
 //サイズの取得
 $img = $imagine->open($filename);
 $size = $img->getSize();
@@ -27,4 +29,4 @@ $point = new Imagine\Image\Point($x, $y);
 //トリミングして表示
 $imagine->open($filename)
 	->crop($point, $box)
-	->show('jpg');
+	->show($img_info['extension']);
