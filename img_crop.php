@@ -7,7 +7,7 @@ $filename = htmlspecialchars($_GET["img_url"],ENT_QUOTES, "UTF-8");
 
 //比率
 $ratio_x = isset( $_GET["ratio_x"] ) && is_numeric($_GET["ratio_x"]) ? $_GET["ratio_x"] : 1;
-$ratio_y = isset( $_GET["ratio_x"] ) && is_numeric($_GET["ratio_x"]) ? $_GET["ratio_y"] : 1;
+$ratio_y = isset( $_GET["ratio_y"] ) && is_numeric($_GET["ratio_y"]) ? $_GET["ratio_y"] : 1;
 
 //画像の情報を取得する
 $img_info = pathinfo($filename);
