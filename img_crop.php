@@ -50,13 +50,8 @@ if ($ratio_x < $ratio_y){
 
 
 // トリミングする位置を決める(中央よせ)
-if ( $size->getWidth() >= $size->getHeight()) { //横幅のほうが大きい場合
-    $x = $size->getWidth()/2 - $corp_w/2;
-    $y = 0;
-} else { //縦幅のほうが大きい場合
-    $x = 0;
-    $y = $size->getHeight()/2 -$corp_h/2;
-}
+$x = $size->getWidth()/2 - $corp_w/2;
+$y = $size->getHeight()/2 -$corp_h/2;
 
 $box = new Imagine\Image\Box($corp_w, $corp_h);
 $point = new Imagine\Image\Point($x, $y);
