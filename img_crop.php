@@ -17,23 +17,23 @@ $img_info = pathinfo($filename);
 $img = $imagine->open($filename);
 $size = $img->getSize();
 if ($ratio_x < $ratio_y){
-	//縦のほうが大きい場合
+	//縦比率のほうが大きい場合
 	if($size->getWidth() >= $size->getHeight()){
 		$corp_w = $size->getHeight() / ($ratio_y / $ratio_x);
 		$corp_h = $size->getHeight();
 	} else {
 		$corp_w = $size->getWidth();
-		$corp_h = $size->getWidth() * $ratio_y;
+		$corp_h = $size->getWidth() * ($ratio_y / $ratio_x);
 		if ($size->getHeight() < $corp_h) {
-			$corp_h = $size->getHeight();
 			$corp_w = $size->getHeight() / ($ratio_y / $ratio_x);	
+			$corp_h = $size->getHeight();
 		}
 	}
 } else if($ratio_x > $ratio_y) { 
 	//横比率のほうが大きい場合
 	if($size->getWidth() >= $size->getHeight()){
-		$corp_w = $size->getHeight() * $ratio_x;
-		$corp_h = $size->getHeight();	
+		$corp_w = $size->getHeight() * ($ratio_x / $ratio_y);
+		$corp_h = $size->getHeight();
 		if ($size->getWidth() < $corp_w) {
 			$corp_w = $size->getWidth();	
 			$corp_h = $size->getWidth() / ($ratio_x / $ratio_y);
