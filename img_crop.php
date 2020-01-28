@@ -12,7 +12,6 @@ $ratio_y = isset( $_GET["ratio_y"] ) && is_numeric($_GET["ratio_y"]) ? $_GET["ra
 //画像の情報を取得する
 $img_info = pathinfo($filename);
 
-
 //サイズの取得
 $img = $imagine->open($filename);
 $size = $img->getSize();
@@ -57,6 +56,5 @@ $box = new Imagine\Image\Box($corp_w, $corp_h);
 $point = new Imagine\Image\Point($x, $y);
 
 //トリミングして表示
-$imagine->open($filename)
-	->crop($point, $box)
+$img->crop($point, $box)
 	->show($img_info['extension']);
